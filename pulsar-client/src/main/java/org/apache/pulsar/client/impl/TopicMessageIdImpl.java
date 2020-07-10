@@ -78,4 +78,12 @@ public class TopicMessageIdImpl implements MessageId {
     public int compareTo(MessageId o) {
         return messageId.compareTo(o);
     }
+    
+    @Override
+    public String toString() {
+        return String.format("%s:%s:%s", 
+                             this.topicPartitionName != null ? this.topicPartitionName : "null" , 
+                             this.topicName != null ? this.topicName : "null", 
+                             this.messageId != null ? this.messageId.toString() : "null");
+    }
 }
